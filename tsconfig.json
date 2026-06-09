@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "types": ["vitest/globals"],
     "target": "ES2020",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -28,8 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "style-extractor-dev/templates/**/*", "packages/core", "tests/e2e", "tests/playwright.config.ts", "tools/cli", "tools/scripts", "editorial-brutalist-portfolio"]
+  "exclude": ["node_modules"]
 }
