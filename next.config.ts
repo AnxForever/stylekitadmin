@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -37,33 +36,15 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: [
       "lucide-react",
-      "@radix-ui/react-accordion",
       "@radix-ui/react-checkbox",
       "@radix-ui/react-dialog",
       "@radix-ui/react-popover",
-      "@radix-ui/react-progress",
-      "@radix-ui/react-radio-group",
       "@radix-ui/react-select",
       "@radix-ui/react-toast",
-      "@radix-ui/react-tooltip",
     ],
-  },
-
-  async redirects() {
-    return [
-      { source: "/prompt-builder", destination: "/generate", permanent: false },
-      { source: "/linter", destination: "/generate", permanent: false },
-      { source: "/playground", destination: "/generate", permanent: false },
-      { source: "/assets", destination: "/styles", permanent: false },
-      { source: "/api-test", destination: "/developers", permanent: false },
-    ];
   },
 
   turbopack: {},
 };
 
-const analyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
-});
-
-export default analyzer(nextConfig);
+export default nextConfig;
